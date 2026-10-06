@@ -1,59 +1,92 @@
 # Examples
 
+These examples are intentionally generic and contain no project-specific implementation details.
+
 ## Bug fix
 
 Input:
 
-> Backhaul reloads when the page gains focus. Load initially and on Submit only.
+> Clicking Save multiple times sends duplicate requests. Only one submission should be active at a time.
 
 Expected generated prompt behavior:
 
-- inspect existing request flow,
-- trace focus/lifecycle/state subscriptions,
-- find the actual refresh owner,
-- preserve initial load,
-- preserve Submit-triggered load,
-- remove only the unintended focus refetch,
-- verify focus/blur produces no request.
+- inspect the actual save/request flow,
+- identify the owner of the submission state,
+- trace event and async handling,
+- identify the root cause,
+- reuse an existing submission/loading pattern where available,
+- prevent concurrent duplicate submissions,
+- preserve normal success and error behavior,
+- verify that a new save is possible after the previous request completes.
 
 ## Existing implementation alignment
 
 Input:
 
-> Make Core Timeseries match Timeseries for zoom, reset, legends, multi KPI, axis min/max and export.
+> Make the new profile form behave like the existing account form for validation, loading, error handling, and accessibility.
 
-Expected behavior:
+Expected generated prompt behavior:
 
-- inspect the reference Timeseries implementation,
-- compare only the requested behaviors,
-- reuse established shared architecture,
-- verify legend visibility and axis bounds,
-- avoid unrelated redesign.
+- inspect the existing reference form,
+- identify the relevant established patterns,
+- reuse applicable validation and state handling,
+- avoid creating a parallel implementation,
+- preserve unrelated behavior,
+- verify the requested areas independently.
+
+## API integration
+
+Input:
+
+> Integrate the new endpoint using the existing API service patterns and preserve the supplied request and response field names exactly.
+
+Expected generated prompt behavior:
+
+- inspect existing API integration patterns,
+- preserve HTTP method, endpoint, DTO fields, and casing,
+- do not invent missing fields,
+- reuse the established service/error/loading architecture,
+- verify request construction and response handling.
 
 ## Android decoding bug
 
 Input:
 
-> Decoded bytes [48, 0, 57, 0] produce extra characters when decoded with UTF_8.
+> Decoded bytes contain unexpected null characters when converted to text.
 
-Expected behavior:
+Expected generated prompt behavior:
 
-- inspect producer encoding and decode boundary,
-- verify the real encoding,
-- avoid merely stripping zero bytes,
-- preserve cryptographic behavior unless evidence requires changes,
-- verify output value and length.
+- inspect the producer and decoding boundary,
+- determine the actual character encoding,
+- avoid symptom-only cleanup such as blindly stripping bytes,
+- preserve unrelated cryptographic or transport behavior,
+- verify decoded value and length.
 
-## Correction + continuation
+## Correction
 
 Input:
 
-> Claude reports the filters are finished, but they are still behind a bottom toggle. Keep the cube icons and route move; finish the filter correction.
+> Claude reports that form validation is complete, but server-side errors are still not displayed next to the affected fields.
 
-Expected behavior:
+Expected generated prompt behavior:
 
-- verify previous report claims,
-- keep correct route/icon work,
-- fix only remaining filter behavior,
-- verify preserved functionality,
-- report retained vs corrected work separately.
+- verify the previous implementation report,
+- retain correctly completed behavior,
+- identify the remaining gap,
+- correct only the incomplete behavior,
+- verify both the correction and preserved functionality.
+
+## Engineering report continuation
+
+Input:
+
+> Here is Claude's previous engineering report. Continue only the remaining work.
+
+Expected generated prompt behavior:
+
+- treat report claims as reported rather than automatically verified,
+- reconcile them with the current repository,
+- retain verified completed work,
+- correct inaccurate claims where necessary,
+- continue only incomplete work,
+- report fresh verification separately.

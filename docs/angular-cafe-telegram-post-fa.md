@@ -38,7 +38,7 @@
 
 Repo و کل ساختار skill + referenceها + exampleها اینجاست:
 
-**{{GITHUB_REPO_URL}}**
+**https://github.com/omidkh68/claude-prompt-architect**
 
 اگه زیاد با Claude Code روی پروژه‌های واقعی کار می‌کنید، احتمالاً این workflow براتون کاربردیه.
 
@@ -69,4 +69,4 @@ Repo و کل ساختار skill + referenceها + exampleها اینجاست:
 
 Repo:
 
-**{{GITHUB_REPO_URL}}**
+**https://github.com/omidkh68/claude-prompt-architect**
