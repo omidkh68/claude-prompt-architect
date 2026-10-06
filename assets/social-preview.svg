@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <rect width="1280" height="640" rx="32" fill="#0d1117"/>
+  <text x="80" y="230" fill="#ffffff" font-family="Arial, sans-serif" font-size="72" font-weight="700">
+    Claude Prompt Architect
+  </text>
+  <text x="80" y="325" fill="#8b949e" font-family="Arial, sans-serif" font-size="42">
+    Goal → Contexts → Actions → Outputs
+  </text>
+  <text x="80" y="410" fill="#c9d1d9" font-family="Arial, sans-serif" font-size="32">
+    Engineering prompts for Claude / Claude Code
+  </text>
+</svg>
